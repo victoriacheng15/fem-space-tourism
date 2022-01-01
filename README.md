@@ -12,7 +12,7 @@ The goals:
 ## Screenshot
 
 <div align="center">
-  <img src="https://user-images.githubusercontent.com/35031228/147298710-55deae3c-1ed7-4613-81c3-583c210250ec.png" alt="desktop view" width="500"/>
+  <!-- <img src="https://user-images.githubusercontent.com/35031228/147298710-55deae3c-1ed7-4613-81c3-583c210250ec.png" alt="desktop view" width="500"/> -->
 </div>
 
 ## Links
@@ -24,6 +24,9 @@ The goals:
 
 - Semantic HTML5 markup
 - Mobile-first workflow
+- React
+- Tailwind CSS
+- React Router
 
 ## Author
 
