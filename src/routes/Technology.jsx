@@ -10,7 +10,6 @@ const Technology = () => {
   const changeTech = (e) => {
     const { dataset } = e.target;
     setTechName(dataset.tech);
-    console.log(techName);
   };
 
   const techList = [
