@@ -18,7 +18,7 @@ const Destination = () => {
   ];
 
   useEffect(() => {
-    const buttons = document.querySelectorAll('[data-name]');
+    const buttons = document.querySelectorAll('[data-planet]');
     buttons.forEach((button) => {
       button.addEventListener('click', () => {
         buttons.forEach((btn) => btn.classList.remove('link-active'));
@@ -45,18 +45,18 @@ const Destination = () => {
           <section className="flex flex-col items-center">
             <div className="flex items-center justify-center w-full gap-4 mb-7">
               {
-            planetList.map((planet) => (
-              <button
-                key={planet.id}
-                onClick={changePlanet}
-                data-name={planet.name}
-                type="button"
-                className="relative h-full pb-2 text-lg tracking-widest uppercase content-none link-hover font-barlow"
-              >
-                {planet.name}
-              </button>
-            ))
-          }
+                planetList.map((planet) => (
+                  <button
+                    key={planet.id}
+                    onClick={changePlanet}
+                    data-planet={planet.name}
+                    type="button"
+                    className="relative h-full pb-2 text-lg tracking-widest uppercase content-none link-hover font-barlow"
+                  >
+                    {planet.name}
+                  </button>
+                ))
+              }
             </div>
             <h1 className="mb-5 text-5xl uppercase font-bellefair">{planetName}</h1>
             <p className=" text-base leading-7 text-center mb-8 font-barlow w-80 md:w-[35.625rem] bpCustom:w-[27.8125rem]">
