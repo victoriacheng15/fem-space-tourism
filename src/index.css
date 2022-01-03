@@ -15,6 +15,14 @@
     @apply before:bg-white;
   }
 
+  .tech-btn {
+    @apply text-white border-2 rounded-full border-white/25 font-bellefair;
+  }
+
+  .tech-btn-active {
+    @apply text-black bg-white;
+  }
+
   .bg-home-mobile {
     @apply bg-[url('/assets/home/background-home-mobile.jpg')];
   }
