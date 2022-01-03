@@ -11,6 +11,10 @@
     @apply before:bg-white;
   }
 
+  .crew-active {
+    @apply before:bg-white;
+  }
+
   .bg-home-mobile {
     @apply bg-[url('/assets/home/background-home-mobile.jpg')];
   }
