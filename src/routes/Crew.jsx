@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useFetchInfo } from '../hook/useFetchInfo';
+import PageTitle from '../components/titles/PageTitle';
+import InfoTitle from '../components/titles/InfoTitle';
+import Paragraph from '../components/titles/Paragraph';
+import ImageBox from '../components/image-box/ImageBox';
 
 const Crew = () => {
   const { data } = useFetchInfo('crew');
@@ -28,21 +32,16 @@ const Crew = () => {
   }, []);
 
   return (
-    <main className="w-screen h-screen pt-20 text-white bg-no-repeat bg-cover md:pt-36 bpCustom:pt-52 bg-destination-mobile md:bg-destination-tablet bpCustom:bg-destination-desktop">
+    <main className="w-screen h-screen pt-20 text-white bg-no-repeat bg-cover md:pt-36 bpCustom:pt-52 bg-crew-mobile md:bg-crew-tablet bpCustom:bg-crew-desktop">
       <div className="m-auto max-w-screen-bpCustom">
-        <h1 className="text-3xl tracking-widest text-center text-white uppercase md:text-left md:pl-9 font-barlow mb-9 bpCustom:text-left bpCustom:pl-40 bpCustom:mb-20">
-          <span className="mr-3 opacity-60">02</span>
-          meet your crew
-        </h1>
+        <PageTitle span="02" title="meet your crew" />
         <div className="flex flex-col items-center justify-center gap-10 bpCustom:gap-32 bpCustom:flex-row-reverse md:flex-col-reverse">
-          <div className="w-[327px] h-[223px] md:w-[456px] md:h-[572px] bpCustom:w-[568px] bpCustom:h-[712px]">
-            <img
-              className="object-contain w-full h-full"
-              src={`/assets/crew/image-${formatName(crewName)}.png`}
-              alt="blah"
-            />
-            <div className="w-full h-0.5 bg-white/25 md:hidden" />
-          </div>
+          <ImageBox
+            classes="w-[327px] h-[223px] md:w-[456px] md:h-[572px] bpCustom:w-[568px] bpCustom:h-[712px]"
+            src={`/assets/crew/image-${formatName(crewName)}.png`}
+            alt={crewName}
+            underline
+          />
           <section className="flex flex-col items-center md:flex-col-reverse gap-9 bpCustom:gap-32">
             <div className="flex items-center justify-center w-full gap-4 bpCustom:justify-start">
               {
@@ -73,12 +72,8 @@ const Crew = () => {
               <h3 className="uppercase opacity-50 font-bellefair">
                 {data.map((crew) => (crew.name.toLowerCase() === crewName ? crew.info.role : ''))}
               </h3>
-              <h2 className="text-2xl tracking-widest uppercase font-bellefair">
-                {crewName}
-              </h2>
-              <p className="w-80 md:w-[35.625rem] bpCustom:w-[27.8125rem] font-barlow leading-7 text-center bpCustom:text-left">
-                {data.map((crew) => (crew.name.toLowerCase() === crewName ? crew.info.bio : ''))}
-              </p>
+              <InfoTitle title={crewName} />
+              <Paragraph paragraph={data.map((crew) => (crew.name.toLowerCase() === crewName ? crew.info.bio : ''))} />
             </div>
           </section>
         </div>
