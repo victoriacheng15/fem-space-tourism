@@ -7,7 +7,7 @@ const Destination = () => {
 
   const changePlanet = (e) => {
     const { dataset } = e.target;
-    setPlanetName(dataset.name);
+    setPlanetName(dataset.planet);
   };
 
   const planetList = [
@@ -28,9 +28,9 @@ const Destination = () => {
   }, []);
 
   return (
-    <main className="w-screen h-screen text-white bg-no-repeat bg-cover pt-36 md:pt-52 bpCustom:pt-96 bg-destination-mobile md:bg-destination-tablet bpCustom:bg-destination-desktop">
+    <main className="w-screen h-screen pt-24 text-white bg-no-repeat bg-cover md:pt-36 bpCustom:pt-56 bg-destination-mobile md:bg-destination-tablet bpCustom:bg-destination-desktop">
       <div className="m-auto max-w-screen-bpCustom">
-        <h1 className="text-3xl tracking-widest text-center text-white uppercase font-barlow mb-9 bpCustom:text-left bpCustom:pl-40 bpCustom:mb-20">
+        <h1 className="text-3xl tracking-widest text-center text-white uppercase md:text-left md:pl-9 font-barlow mb-9 bpCustom:text-left bpCustom:pl-40 bpCustom:mb-20">
           <span className="mr-3 opacity-60">01</span>
           pick your destination
         </h1>
@@ -45,20 +45,31 @@ const Destination = () => {
           <section className="flex flex-col items-center">
             <div className="flex items-center justify-center w-full gap-4 mb-7">
               {
-                planetList.map((planet) => (
-                  <button
-                    key={planet.id}
-                    onClick={changePlanet}
-                    data-planet={planet.name}
-                    type="button"
-                    className="relative h-full pb-2 text-lg tracking-widest uppercase content-none link-hover font-barlow"
-                  >
-                    {planet.name}
-                  </button>
-                ))
+                planetList.map((planet) => (planet.name === planetName
+                  ? (
+                    <button
+                      key={planet.id}
+                      onClick={changePlanet}
+                      data-planet={planet.name}
+                      type="button"
+                      className="relative h-full pb-2 text-lg tracking-widest uppercase content-none link-hover font-barlow link-active"
+                    >
+                      {planet.name}
+                    </button>
+                  ) : (
+                    <button
+                      key={planet.id}
+                      onClick={changePlanet}
+                      data-planet={planet.name}
+                      type="button"
+                      className="relative h-full pb-2 text-lg tracking-widest uppercase content-none link-hover font-barlow"
+                    >
+                      {planet.name}
+                    </button>
+                  )))
               }
             </div>
-            <h1 className="mb-5 text-5xl uppercase font-bellefair">{planetName}</h1>
+            <h2 className="mb-5 text-5xl uppercase font-bellefair">{planetName}</h2>
             <p className=" text-base leading-7 text-center mb-8 font-barlow w-80 md:w-[35.625rem] bpCustom:w-[27.8125rem]">
               {
               data.map((planet) => (planet.name.toLowerCase() === planetName ? planet.info.description : ''))
