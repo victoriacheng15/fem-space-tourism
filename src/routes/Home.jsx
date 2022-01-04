@@ -1,5 +1,7 @@
 /* eslint-disable max-len */
 import React from 'react';
+// component
+import Explore from '../components/travel-info/Explore';
 
 const Home = () => (
   <main className="w-screen h-screen bg-no-repeat bg-cover pt-36 md:pt-52 bpCustom:pt-96 bg-home-mobile md:bg-home-tablet bpCustom:bg-home-desktop text-clrLight-925">
@@ -11,9 +13,7 @@ const Home = () => (
           Let’s face it; if you want to go to space, you might as well genuinely go to outer space and not hover kind of on the edge of it. Well sit back, and relax because we’ll give you a truly out of this world experience!
         </p>
       </div>
-      <div className="relative grid w-40 duration-300 bg-white rounded-full bpCustom:w-72 md:w-60 aspect-square place-items-center content-none after:absolute after:w-full after:h-full after:bg-white/25 after:rounded-full hover:after:scale-150 focus:after:scale-150 ease">
-        <a href="explore" className="relative z-30 text-xl tracking-widest uppercase text-clrDark-925">explore</a>
-      </div>
+      <Explore />
     </div>
   </main>
 );

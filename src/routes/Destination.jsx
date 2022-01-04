@@ -1,36 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+// hook
 import { useFetchInfo } from '../hook/useFetchInfo';
+// components
 import PageTitle from '../components/titles/PageTitle';
 import InfoTitle from '../components/titles/InfoTitle';
 import Paragraph from '../components/titles/Paragraph';
 import TravelInfo from '../components/travel-info/TravelInfo';
 import ImageBox from '../components/image-box/ImageBox';
+// helper
+import { planetList } from '../listsHelper';
 
 const Destination = () => {
   const { data } = useFetchInfo('destinations');
   const [planetName, setPlanetName] = useState('moon');
 
-  const changePlanet = (e) => {
-    const { dataset } = e.target;
-    setPlanetName(dataset.planet);
-  };
-
-  const planetList = [
-    { id: 1, name: 'moon' },
-    { id: 2, name: 'mars' },
-    { id: 3, name: 'europa' },
-    { id: 4, name: 'titan' },
-  ];
-
-  useEffect(() => {
-    const buttons = document.querySelectorAll('[data-planet]');
-    buttons.forEach((button) => {
-      button.addEventListener('click', () => {
-        buttons.forEach((btn) => btn.classList.remove('link-active'));
-        button.classList.add('link-active');
-      });
-    });
-  }, []);
+  const changePlanet = (e) => setPlanetName(e.target.dataset.planet);
 
   return (
     <main className="w-screen h-screen pt-24 text-white bg-no-repeat bg-cover md:pt-36 bpCustom:pt-56 bg-destination-mobile md:bg-destination-tablet bpCustom:bg-destination-desktop">
@@ -38,44 +22,39 @@ const Destination = () => {
         <PageTitle span="01" title="pick your destination" />
         <div className="flex flex-col items-center justify-center gap-10 bpCustom:gap-20 bpCustom:flex-row">
           <ImageBox
-            classes="w-[10.625rem] md:w-[18.75rem] bpCustom:w-[27.8125rem] aspect-square"
+            classes="w-[10.63rem] md:w-[18.75rem] bpCustom:w-[27.81rem] aspect-square"
             src={`./assets/destination/image-${planetName}.png`}
             alt={planetName}
           />
           <section className="flex flex-col items-center">
             <div className="flex items-center justify-center w-full gap-4 mb-7">
               {
-                planetList.map((planet) => (planet.name === planetName
-                  ? (
-                    <button
-                      key={planet.id}
-                      onClick={changePlanet}
-                      data-planet={planet.name}
-                      type="button"
-                      className="relative h-full pb-2 text-lg tracking-widest uppercase content-none link-hover font-barlow link-active"
-                    >
-                      {planet.name}
-                    </button>
-                  ) : (
-                    <button
-                      key={planet.id}
-                      onClick={changePlanet}
-                      data-planet={planet.name}
-                      type="button"
-                      className="relative h-full pb-2 text-lg tracking-widest uppercase content-none link-hover font-barlow"
-                    >
-                      {planet.name}
-                    </button>
-                  )))
+                planetList.map((planet) => (
+                  <button
+                    key={planet.id}
+                    onClick={changePlanet}
+                    data-planet={planet.name}
+                    type="button"
+                    className={`relative h-full pb-2 text-lg tracking-widest uppercase content-none link-hover font-barlow ${planet.name === planetName ? 'link-active' : 'inactive'}`}
+                  >
+                    {planet.name}
+                  </button>
+                ))
               }
             </div>
             <div className="flex flex-col items-center justify-center gap-4">
               <InfoTitle title={planetName} largeText />
-              <Paragraph paragraph={data.map((planet) => (planet.name.toLowerCase() === planetName ? planet.info.description : ''))} />
+              <Paragraph
+                paragraph={data.map((planet) => (planet.name.toLowerCase() === planetName ? planet.info.description : ''))}
+              />
               <div className="w-full h-0.5 bg-white/50 mb-8" />
               <div className="flex flex-col items-center justify-center w-full gap-10 md:flex-row">
-                <TravelInfo travel={data.map((planet) => (planet.name.toLowerCase() === planetName ? planet.info.distance : ''))} />
-                <TravelInfo travel={data.map((planet) => (planet.name.toLowerCase() === planetName ? planet.info.travel : ''))} />
+                <TravelInfo
+                  travel={data.map((planet) => (planet.name.toLowerCase() === planetName ? planet.info.distance : ''))}
+                />
+                <TravelInfo
+                  travel={data.map((planet) => (planet.name.toLowerCase() === planetName ? planet.info.travel : ''))}
+                />
               </div>
             </div>
           </section>

@@ -8,8 +8,7 @@ export const useFetchInfo = (page) => {
     const url = './src/data/data.json';
     const fetchData = async () => {
       try {
-        const response = await fetch(url);
-        const info = await response.json();
+        const info = await (await fetch(url)).json();
         setData(info[page]);
       } catch (error) {
         setFetchError(error);
@@ -17,6 +16,6 @@ export const useFetchInfo = (page) => {
     };
 
     fetchData();
-  }, [page]);
+  }, []);
   return { data, fetchError };
 };
