@@ -4,7 +4,7 @@ The challenge is to build out this [Space tourism website challenge](https://www
 
 The goals:
 
-- Learn more about `React`
+- Learn `React Router` and improve `React` and `Tailwind CSS`
 - View the optimal layout for each of the website's pages depending on their device's screen size
 - See hover states for all interactive elements on the page
 - View each page and be able to toggle between the tabs to see new information
@@ -12,13 +12,15 @@ The goals:
 ## Screenshot
 
 <div align="center">
-  <!-- <img src="https://user-images.githubusercontent.com/35031228/147298710-55deae3c-1ed7-4613-81c3-583c210250ec.png" alt="desktop view" width="500"/> -->
+  <img src="https://user-images.githubusercontent.com/35031228/148137582-7a9a91f6-9129-43be-ae9a-1b8d25c015db.png" alt="mobile view" width="300"/>
+  <img src="https://user-images.githubusercontent.com/35031228/148137584-07bf82f0-69d5-4513-aa3b-c01cb89645cf.png" alt="tablet view" width="400"/>
+  <img src="https://user-images.githubusercontent.com/35031228/148137585-eb1260b5-78e7-4316-a762-f454cf1e25e1.png" alt="desktop view" width="600"/>
 </div>
 
 ## Links
 
-- [Frontend Mentor Solution](https://www.frontendmentor.io/solutions/blogr-page-built-with-react-and-tailwind-css-UYs7WrdQz)
-- [Live Page](https://fem-blogr-landing-page-vc.netlify.app/)
+- [Frontend Mentor Solution](https://www.frontendmentor.io/challenges/space-tourism-multipage-website-gRWj1URZ3/hub/space-tourism-built-with-react-router-react-and-tailwind-46DS14ast)
+- [Live Page](https://fem-space-tourism-vc.vercel.app/)
 
 ## Built with
 
