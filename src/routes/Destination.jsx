@@ -50,9 +50,11 @@ const Destination = () => {
               <div className="w-full h-0.5 bg-white/50 mb-8" />
               <div className="flex flex-col items-center justify-center w-full gap-10 md:flex-row">
                 <TravelInfo
+                  title="avg. distance"
                   travel={data.map((planet) => (planet.name.toLowerCase() === planetName ? planet.info.distance : ''))}
                 />
                 <TravelInfo
+                  title="est. travel time"
                   travel={data.map((planet) => (planet.name.toLowerCase() === planetName ? planet.info.travel : ''))}
                 />
               </div>

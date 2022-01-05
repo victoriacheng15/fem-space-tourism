@@ -8,7 +8,7 @@ const Home = () => (
     <div className="flex flex-col items-center justify-center w-11/12 gap-40 m-auto bpCustom:flex-row max-w-screen-bpCustom">
       <div className="flex flex-col items-center justify-center gap-4 bpCustom:items-start">
         <h2 className="tracking-widest uppercase">so, you want to travel to</h2>
-        <h1 className="uppercase font-bellefair text-9xl">space</h1>
+        <h1 className="uppercase font-bellefair text-8xl md:text-[9.38rem]">space</h1>
         <p className="max-w-md leading-8 text-center bpCustom:text-left">
           Let’s face it; if you want to go to space, you might as well genuinely go to outer space and not hover kind of on the edge of it. Well sit back, and relax because we’ll give you a truly out of this world experience!
         </p>

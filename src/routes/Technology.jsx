@@ -45,7 +45,7 @@ const Technology = () => {
               }
             </div>
             <div className="flex flex-col items-center justify-center gap-5 bpCustom:items-start">
-              <h3 className="text-sm uppercase opacity-50 font-barlow">
+              <h3 className="uppercase opacity-50 font-barlow">
                 the terminology
               </h3>
               <InfoTitle title={techName} />

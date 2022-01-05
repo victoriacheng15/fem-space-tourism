@@ -1,9 +1,9 @@
 import React from 'react';
 
-const TravelInfo = ({ travel }) => (
+const TravelInfo = ({ title, travel }) => (
   <div className="flex flex-col items-center justify-center">
-    <h3 className="mb-4 tracking-widest uppercase font-barlow">avg. distance</h3>
-    <p className="text-3xl uppercase font-barlow">
+    <h3 className="mb-4 text-sm tracking-widest uppercase font-barlow text-clrLight-925">{title}</h3>
+    <p className="text-[1.75rem] uppercase font-barlow">
       {travel}
     </p>
   </div>
