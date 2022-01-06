@@ -45,7 +45,7 @@ const Crew = () => {
               }
             </div>
             <div className="flex flex-col items-center justify-center gap-4 bpCustom:items-start">
-              <h3 className="uppercase opacity-50 text-[2rem] font-bellefair">
+              <h3 className="uppercase opacity-50 md:text-[1.625rem] bpCustom:text-[2rem] font-bellefair">
                 {data.map((crew) => (crew.name.toLowerCase() === crewName ? crew.info.role : ''))}
               </h3>
               <InfoTitle title={crewName} />
