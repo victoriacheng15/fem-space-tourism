@@ -14,7 +14,7 @@ The goals:
 <div align="center">
   <img src="https://user-images.githubusercontent.com/35031228/148137582-7a9a91f6-9129-43be-ae9a-1b8d25c015db.png" alt="mobile view" width="300"/>
   <img src="https://user-images.githubusercontent.com/35031228/148137584-07bf82f0-69d5-4513-aa3b-c01cb89645cf.png" alt="tablet view" width="400"/>
-  <img src="https://user-images.githubusercontent.com/35031228/148137585-eb1260b5-78e7-4316-a762-f454cf1e25e1.png" alt="desktop view" width="600"/>
+  <img src="https://user-images.githubusercontent.com/35031228/148599848-9358c011-3db4-4a6a-8680-e74d5fad291b.png" alt="desktop view" width="600"/>
 </div>
 
 ## Links
