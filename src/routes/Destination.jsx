@@ -17,7 +17,7 @@ const Destination = () => {
   const changePlanet = (e) => setPlanetName(e.target.dataset.planet);
 
   return (
-    <main className="w-screen h-screen pt-24 text-white bg-no-repeat bg-cover md:pt-36 bpCustom:pt-56 bg-destination-mobile md:bg-destination-tablet bpCustom:bg-destination-desktop">
+    <main className="pt-24 pb-8 text-white main-bg md:pt-36 bpCustom:pt-56 bg-destination-mobile md:bg-destination-tablet bpCustom:bg-destination-desktop before:bg-destination-mobile md:before:bg-destination-table bpCustom:before:bg-destination-desktop">
       <div className="m-auto max-w-screen-bpCustom">
         <PageTitle span="01" title="pick your destination" />
         <div className="flex flex-col items-center justify-center gap-10 bpCustom:gap-20 bpCustom:flex-row">

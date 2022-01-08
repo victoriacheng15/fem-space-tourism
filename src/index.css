@@ -23,6 +23,10 @@
     @apply text-black bg-white;
   }
 
+  .main-bg {
+    @apply relative w-full h-full bg-center bg-no-repeat bg-cover content-none before:absolute before:inset-0 before:-z-10 before:w-full before:h-screen before:bg-center before:bg-no-repeat before:bg-cover;
+  }
+
   .bg-home-mobile {
     @apply bg-[url('/assets/home/background-home-mobile.jpg')];
   }

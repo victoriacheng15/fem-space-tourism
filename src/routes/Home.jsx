@@ -3,8 +3,10 @@ import React from 'react';
 // component
 import Explore from '../components/travel-info/Explore';
 
+// content-none before:absolute before:inset-0 before:-z-10 before:w-ful before:h-screen before:bg-black
+
 const Home = () => (
-  <main className="w-screen h-screen bg-no-repeat bg-cover pt-36 md:pt-52 bpCustom:pt-96 bg-home-mobile md:bg-home-tablet bpCustom:bg-home-desktop text-clrLight-925">
+  <main className="pb-8 main-bg pt-36 md:pt-52 bpCustom:pt-96 bg-home-mobile md:bg-home-tablet bpCustom:bg-home-desktop text-clrLight-925 before:bg-home-mobile md:before:bg-home-table bpCustom:before:bg-home-desktop before:rotate-180">
     <div className="flex flex-col items-center justify-center w-11/12 gap-40 m-auto bpCustom:flex-row max-w-screen-bpCustom">
       <div className="flex flex-col items-center justify-center gap-4 bpCustom:items-start">
         <h2 className="tracking-widest uppercase">so, you want to travel to</h2>

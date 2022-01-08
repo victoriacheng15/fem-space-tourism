@@ -18,7 +18,7 @@ const Crew = () => {
   const changeCrew = (e) => setCrewName(e.target.dataset.crew);
 
   return (
-    <main className="w-screen h-screen pt-20 text-white bg-no-repeat bg-cover md:pt-36 bpCustom:pt-52 bg-crew-mobile md:bg-crew-tablet bpCustom:bg-crew-desktop">
+    <main className="pt-20 pb-8 text-white main-bg md:pt-36 bpCustom:pt-52 bg-crew-mobile md:bg-crew-tablet bpCustom:bg-crew-desktop before:bg-crew-mobile md:before:bg-crew-table bpCustom:before:bg-crew-desktop">
       <div className="m-auto max-w-screen-bpCustom">
         <PageTitle span="02" title="meet your crew" />
         <div className="flex flex-col items-center justify-center gap-10 bpCustom:gap-32 bpCustom:flex-row-reverse md:flex-col-reverse">
