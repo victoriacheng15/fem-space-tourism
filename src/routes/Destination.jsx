@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
-// hook
 import { useFetchInfo } from '../hook/useFetchInfo';
-// components
+import { MainContainer, PageContainer } from '../layouts';
 import { PageTitle, InfoTitle, Paragraph } from '../components/Titles';
 import TravelInfo from '../components/TravelInfo';
 import ImageBox from '../components/ImageBox';
-// helper
 import { planetList } from '../listsHelper';
 
 const Destination = () => {
@@ -15,8 +13,8 @@ const Destination = () => {
   const changePlanet = (e) => setPlanetName(e.target.dataset.planet);
 
   return (
-    <main className="main-bg bg-destination-mobile md:bg-destination-tablet bpCustom:bg-destination-desktop before:bg-destination-mobile md:before:bg-destination-table bpCustom:before:bg-destination-desktop pt-24 pb-8 text-white md:pt-36 bpCustom:pt-56">
-      <div className="m-auto max-w-screen-bpCustom">
+    <MainContainer pageType="destination">
+      <PageContainer>
         <PageTitle span="01" title="pick your destination" />
         <div className="flex flex-col items-center justify-center gap-10 bpCustom:flex-row bpCustom:gap-20">
           <ImageBox
@@ -71,8 +69,8 @@ const Destination = () => {
             </div>
           </section>
         </div>
-      </div>
-    </main>
+      </PageContainer>
+    </MainContainer>
   );
 };
 

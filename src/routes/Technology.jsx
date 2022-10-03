@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
-// hook
 import { useFetchInfo } from '../hook/useFetchInfo';
-// components
+import { MainContainer, PageContainer } from '../layouts';
 import { PageTitle, InfoTitle, Paragraph } from '../components/Titles';
 import ImageBox from '../components/ImageBox';
-// helper
 import { techList } from '../listsHelper';
 
 const Technology = () => {
@@ -16,8 +14,8 @@ const Technology = () => {
   const changeTech = (e) => setTechName(e.target.dataset.tech);
 
   return (
-    <main className="main-bg bg-technology-mobile md:bg-technology-tablet bpCustom:bg-technology-desktop before:bg-technology-mobile md:before:bg-technology-table bpCustom:before:bg-technology-desktop pt-24 pb-8 text-white md:pt-36 bpCustom:pt-56">
-      <div className="m-auto max-w-screen-bpCustom">
+    <MainContainer pageType="technology">
+      <PageContainer>
         <PageTitle span="03" title="space launch 01" />
         <div className="bpCustom:gap-18 flex flex-col items-center justify-center gap-10 bpCustom:flex-row-reverse">
           <ImageBox
@@ -59,8 +57,8 @@ const Technology = () => {
             </div>
           </section>
         </div>
-      </div>
-    </main>
+      </PageContainer>
+    </MainContainer>
   );
 };
 
