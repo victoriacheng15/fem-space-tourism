@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import React from 'react';
 // component
-import Explore from '../components/travel-info/Explore';
+import Explore from '../components/TravelInfo/Explore';
 
 // content-none before:absolute before:inset-0 before:-z-10 before:w-ful before:h-screen before:bg-black
 

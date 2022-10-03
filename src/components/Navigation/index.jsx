@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 // components
-import ImageBox from '../image-box/ImageBox';
+import ImageBox from '../ImageBox';
 import MobileNav from './MobileNav';
 // image
 import logo from '/assets/shared/logo.svg';

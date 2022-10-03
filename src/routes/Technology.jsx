@@ -2,10 +2,8 @@ import React, { useState } from 'react';
 // hook
 import { useFetchInfo } from '../hook/useFetchInfo';
 // components
-import PageTitle from '../components/titles/PageTitle';
-import InfoTitle from '../components/titles/InfoTitle';
-import Paragraph from '../components/titles/Paragraph';
-import ImageBox from '../components/image-box/ImageBox';
+import { PageTitle, InfoTitle, Paragraph } from '../components/Titles';
+import ImageBox from '../components/ImageBox';
 // helper
 import { techList } from '../listsHelper';
 

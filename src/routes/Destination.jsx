@@ -2,11 +2,9 @@ import React, { useState } from 'react';
 // hook
 import { useFetchInfo } from '../hook/useFetchInfo';
 // components
-import PageTitle from '../components/titles/PageTitle';
-import InfoTitle from '../components/titles/InfoTitle';
-import Paragraph from '../components/titles/Paragraph';
-import TravelInfo from '../components/travel-info/TravelInfo';
-import ImageBox from '../components/image-box/ImageBox';
+import { PageTitle, InfoTitle, Paragraph } from '../components/Titles';
+import TravelInfo from '../components/TravelInfo';
+import ImageBox from '../components/ImageBox';
 // helper
 import { planetList } from '../listsHelper';
 
