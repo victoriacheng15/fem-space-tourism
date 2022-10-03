@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
-// hook
 import { useFetchInfo } from '../hook/useFetchInfo';
-// components
+import { MainContainer, PageContainer } from '../layouts';
 import { PageTitle, InfoTitle, Paragraph } from '../components/Titles';
 import ImageBox from '../components/ImageBox';
-// helper
 import { crewList } from '../listsHelper';
 
 const Crew = () => {
@@ -16,8 +14,8 @@ const Crew = () => {
   const changeCrew = (e) => setCrewName(e.target.dataset.crew);
 
   return (
-    <main className="main-bg bg-crew-mobile md:bg-crew-tablet bpCustom:bg-crew-desktop before:bg-crew-mobile md:before:bg-crew-table bpCustom:before:bg-crew-desktop pt-20 pb-8 text-white md:pt-36 bpCustom:pt-52">
-      <div className="m-auto max-w-screen-bpCustom">
+    <MainContainer pageType="crew">
+      <PageContainer>
         <PageTitle span="02" title="meet your crew" />
         <div className="flex flex-col items-center justify-center gap-10 md:flex-col-reverse bpCustom:flex-row-reverse bpCustom:gap-32">
           <ImageBox
@@ -57,8 +55,8 @@ const Crew = () => {
             </div>
           </section>
         </div>
-      </div>
-    </main>
+      </PageContainer>
+    </MainContainer>
   );
 };
 
