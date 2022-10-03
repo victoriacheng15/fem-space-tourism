@@ -4,7 +4,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "eslint --fix src",
+    "format": "prettier --write src"
   },
   "dependencies": {
     "react": "^17.0.2",
@@ -16,11 +18,16 @@
     "autoprefixer": "^10.4.1",
     "eslint": "^8.5.0",
     "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "eslint-plugin-tailwindcss": "^3.6.2",
     "postcss": "^8.4.5",
+    "prettier": "^2.7.1",
+    "prettier-plugin-tailwindcss": "^0.1.13",
     "tailwindcss": "^3.0.8",
     "vite": "^2.7.2"
   },
