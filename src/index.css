@@ -4,7 +4,7 @@
 
 @layer components {
   .link-hover {
-    @apply before:absolute before:w-full before:h-1 before:bottom-0 hover:before:bg-white/25;
+    @apply before:absolute before:bottom-0 before:h-1 before:w-full hover:before:bg-white/25;
   }
 
   .link-active {
@@ -16,15 +16,15 @@
   }
 
   .tech-btn {
-    @apply text-white border-2 rounded-full border-white/25 font-bellefair;
+    @apply rounded-full border-2 border-white/25 font-bellefair text-white;
   }
 
   .tech-btn-active {
-    @apply text-black bg-white;
+    @apply bg-white text-black;
   }
 
   .main-bg {
-    @apply relative w-full h-full bg-center bg-no-repeat bg-cover content-none before:absolute before:inset-0 before:-z-10 before:w-full before:h-screen before:bg-center before:bg-no-repeat before:bg-cover;
+    @apply relative h-full w-full bg-cover bg-center bg-no-repeat content-none before:absolute before:inset-0 before:-z-10 before:h-screen before:w-full before:bg-cover before:bg-center before:bg-no-repeat;
   }
 
   .bg-home-mobile {

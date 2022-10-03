@@ -11,31 +11,39 @@ import { linkList } from '../../listsHelper';
 const Nav = () => {
   useEffect(() => {
     const links = document.querySelectorAll('[data-link]');
-    links.forEach((link) => link.addEventListener('click', () => {
-      links.forEach((item) => item.classList.remove('link-active'));
-      link.classList.add('link-active');
-    }));
+    links.forEach((link) =>
+      link.addEventListener('click', () => {
+        links.forEach((item) => item.classList.remove('link-active'));
+        link.classList.add('link-active');
+      })
+    );
   }, []);
 
   return (
-    <nav className="fixed top-0 z-50 flex items-center justify-end w-full h-auto -translate-x-1/2 flex-end left-1/2 md:h-24 max-w-screen-bpCustom bpCustom:top-10">
-      <ImageBox classes="w-10 h-10 absolute top-6 left-6 md:top-7 md:left-10 bpCustom:left-14" src={logo} alt="logo" />
-      <div className="h-px w-[30rem] bg-white/50 relative left-6 hidden bpCustom:block" />
-      <ul className="items-center hidden w-auto h-full px-12 md:flex bg-white/20 gap-9 lg:px-32">
-        {
-          linkList.map((link) => (
-            <li key={link.id} className="h-full text-lg">
-              <Link
-                data-link
-                to={link.href}
-                className={`relative flex items-center h-full tracking-wider text-white uppercase font-barlow content-none link-hover ${link.name === 'home' ? 'link-active' : ''}`}
-              >
-                <span className="hidden mr-2 bpCustom:inline-block">{link.span}</span>
-                {link.name}
-              </Link>
-            </li>
-          ))
-        }
+    <nav className="flex-end fixed top-0 left-1/2 z-50 flex h-auto w-full max-w-screen-bpCustom -translate-x-1/2 items-center justify-end md:h-24 bpCustom:top-10">
+      <ImageBox
+        classes="w-10 h-10 absolute top-6 left-6 md:top-7 md:left-10 bpCustom:left-14"
+        src={logo}
+        alt="logo"
+      />
+      <div className="relative left-6 hidden h-px w-[30rem] bg-white/50 bpCustom:block" />
+      <ul className="hidden h-full w-auto items-center gap-9 bg-white/20 px-12 md:flex lg:px-32">
+        {linkList.map((link) => (
+          <li key={link.id} className="h-full text-lg">
+            <Link
+              data-link
+              to={link.href}
+              className={`link-hover relative flex h-full items-center font-barlow uppercase tracking-wider text-white content-none ${
+                link.name === 'home' ? 'link-active' : ''
+              }`}
+            >
+              <span className="mr-2 hidden bpCustom:inline-block">
+                {link.span}
+              </span>
+              {link.name}
+            </Link>
+          </li>
+        ))}
       </ul>
       <MobileNav />
     </nav>

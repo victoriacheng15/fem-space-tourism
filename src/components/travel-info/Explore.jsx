@@ -1,10 +1,10 @@
 import React from 'react';
 
 const Explore = () => (
-  <div className="relative grid w-40 duration-300 bg-white rounded-full bpCustom:w-72 md:w-60 aspect-square place-items-center content-none after:absolute after:w-full after:h-full after:bg-white/25 after:rounded-full hover:after:scale-150 focus:after:scale-150 ease">
+  <div className="ease relative grid aspect-square w-40 place-items-center rounded-full bg-white duration-300 content-none after:absolute after:h-full after:w-full after:rounded-full after:bg-white/25 hover:after:scale-150 focus:after:scale-150 md:w-60 bpCustom:w-72">
     <a
       href="/"
-      className="relative z-30 text-xl tracking-widest uppercase text-clrDark-925"
+      className="relative z-30 text-xl uppercase tracking-widest text-clrDark-925"
     >
       explore
     </a>
