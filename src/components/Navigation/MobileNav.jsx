@@ -15,7 +15,7 @@ const MobileNav = () => {
       <Link
         id={link.id}
         to={link.href}
-        className="tracking-wider text-white uppercase font-barlow"
+        className="font-barlow uppercase tracking-wider text-white"
       >
         <span className="mr-2">{link.span}</span>
         {link.name}
@@ -24,15 +24,23 @@ const MobileNav = () => {
   ));
 
   return (
-    <div className="relative top-0 right-0 w-64 h-screen md:hidden">
-      <button onClick={toggleMenu} type="button" className="absolute z-10 pr-6 duration-300 right-8 top-8 md:hidden ease">
-        {
-          showMenu
-            ? <img src={closeMenu} alt="close icon" />
-            : <img src={hamburger} alt="hamburger menu" />
-        }
+    <div className="relative top-0 right-0 h-screen w-64 md:hidden">
+      <button
+        onClick={toggleMenu}
+        type="button"
+        className="ease absolute right-8 top-8 z-10 pr-6 duration-300 md:hidden"
+      >
+        {showMenu ? (
+          <img src={closeMenu} alt="close icon" />
+        ) : (
+          <img src={hamburger} alt="hamburger menu" />
+        )}
       </button>
-      <div className={`absolute top-0 right-0 w-full h-full duration-300 ${showMenu ? 'translate-x-0' : 'translate-x-full'} backdrop-blur-xl before:absolute content-none before:w-full before:h-full before:bg-clrLight-925/55 before:z-10 ease md:hidden`}>
+      <div
+        className={`absolute top-0 right-0 h-full w-full duration-300 ${
+          showMenu ? 'translate-x-0' : 'translate-x-full'
+        } before:bg-clrLight-925/55 ease backdrop-blur-xl content-none before:absolute before:z-10 before:h-full before:w-full md:hidden`}
+      >
         <ul className="relative z-20 flex flex-col gap-8 px-8 pt-32">
           {generateLinks}
         </ul>

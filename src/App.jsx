@@ -1,10 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Nav from './components/navigation/Nav';
-import Home from './routes/Home';
-import Destination from './routes/Destination';
-import Crew from './routes/Crew';
-import Technology from './routes/Technology';
+import Nav from './components/Navigation';
+import { Home, Destination, Crew, Technology } from './routes/';
 
 const App = () => (
   <>
