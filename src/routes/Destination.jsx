@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useFetchInfo } from '../hook/useFetchInfo';
-import { MainContainer, PageContainer } from '../layouts';
+import { MainContainer, PageContainer, ContentContainer } from '../layouts';
 import {
   PageTitle,
   InfoTitle,
@@ -21,7 +21,7 @@ const Destination = () => {
     <MainContainer pageType="destination">
       <PageContainer>
         <PageTitle span="01" title="pick your destination" />
-        <div className="flex flex-col items-center justify-center gap-10 bpCustom:flex-row bpCustom:gap-20">
+        <ContentContainer pageName="destination">
           <ImageBox
             typeName="destination"
             src={`./assets/destination/image-${planetName}.png`}
@@ -69,7 +69,7 @@ const Destination = () => {
               </div>
             </div>
           </section>
-        </div>
+        </ContentContainer>
       </PageContainer>
     </MainContainer>
   );
