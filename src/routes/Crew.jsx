@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useFetchInfo } from '../hook/useFetchInfo';
-import { MainContainer, PageContainer } from '../layouts';
+import { MainContainer, PageContainer, ContentContainer } from '../layouts';
 import {
   PageTitle,
   InfoTitle,
@@ -22,7 +22,7 @@ const Crew = () => {
     <MainContainer pageType="crew">
       <PageContainer>
         <PageTitle span="02" title="meet your crew" />
-        <div className="flex flex-col items-center justify-center gap-10 md:flex-col-reverse bpCustom:flex-row-reverse bpCustom:gap-32">
+        <ContentContainer pageName="crew">
           <ImageBox
             typeName="crew"
             src={`/assets/crew/image-${formatName(crewName)}.png`}
@@ -56,7 +56,7 @@ const Crew = () => {
               />
             </div>
           </section>
-        </div>
+        </ContentContainer>
       </PageContainer>
     </MainContainer>
   );
