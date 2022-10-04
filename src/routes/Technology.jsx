@@ -19,7 +19,7 @@ const Technology = () => {
         <PageTitle span="03" title="space launch 01" />
         <div className="bpCustom:gap-18 flex flex-col items-center justify-center gap-10 bpCustom:flex-row-reverse">
           <ImageBox
-            classes="w-full h-[10.63rem] md:h-[19.38rem] bpCustom:w-[32.19rem] bpCustom:h-[32.94rem]"
+            typeName="technology"
             src={`./assets/technology/image-${formatName(
               techName
             )}-portrait.jpg`}

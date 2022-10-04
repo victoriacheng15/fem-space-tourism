@@ -21,11 +21,7 @@ const Nav = () => {
 
   return (
     <nav className="flex-end fixed top-0 left-1/2 z-50 flex h-auto w-full max-w-screen-bpCustom -translate-x-1/2 items-center justify-end md:h-24 bpCustom:top-10">
-      <ImageBox
-        classes="w-10 h-10 absolute top-6 left-6 md:top-7 md:left-10 bpCustom:left-14"
-        src={logo}
-        alt="logo"
-      />
+      <ImageBox src={logo} alt="logo" />
       <div className="relative left-6 hidden h-px w-[30rem] bg-white/50 bpCustom:block" />
       <ul className="hidden h-full w-auto items-center gap-9 bg-white/20 px-12 md:flex lg:px-32">
         {linkList.map((link) => (
