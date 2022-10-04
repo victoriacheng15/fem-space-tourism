@@ -1,8 +1,8 @@
 import React from 'react';
 
-const ImageBox = ({ src, alt, cover, underline, typeName = 'nav' }) => {
+const ImageBox = ({ src, alt, cover, underline, compName = 'nav' }) => {
   const types = {
-    destination:
+    destinations:
       'w-[10.63rem] md:w-[18.75rem] bpCustom:w-[27.81rem] aspect-square',
     crew: 'w-[20.44rem] h-[14rem] md:w-[28.5rem] md:h-[35.75rem] bpCustom:w-[35.5rem] bpCustom:h-[44.5rem]',
     technology:
@@ -11,7 +11,7 @@ const ImageBox = ({ src, alt, cover, underline, typeName = 'nav' }) => {
   };
 
   return (
-    <div className={types[typeName]}>
+    <div className={types[compName]}>
       <img
         className={`${cover ? 'object-cover' : 'object-contain'} h-full w-full`}
         src={src}
