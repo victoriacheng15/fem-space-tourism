@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import hamburger from '/assets/shared/icon-hamburger.svg';
 import closeMenu from '/assets/shared/icon-close.svg';
-// helper
 import { linkList } from '../../listsHelper';
 
 const MobileNav = () => {

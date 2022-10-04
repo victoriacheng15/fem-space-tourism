@@ -1,6 +1,6 @@
 import React from 'react';
 import { MainContainer, HomeContainer } from '../layouts';
-import Explore from '../components/TravelInfo/Explore';
+import { Explore } from '../components';
 
 const Home = () => (
   <MainContainer>

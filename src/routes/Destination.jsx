@@ -1,16 +1,21 @@
 import React, { useState } from 'react';
 import { useFetchInfo } from '../hook/useFetchInfo';
 import { MainContainer, PageContainer } from '../layouts';
-import { PageTitle, InfoTitle, Paragraph } from '../components/Titles';
-import TravelInfo from '../components/TravelInfo';
-import ImageBox from '../components/ImageBox';
+import {
+  PageTitle,
+  InfoTitle,
+  Paragraph,
+  ImageBox,
+  TravelInfo,
+  Button,
+} from '../components';
 import { planetList } from '../listsHelper';
 
 const Destination = () => {
   const { data } = useFetchInfo('destinations');
   const [planetName, setPlanetName] = useState('moon');
 
-  const changePlanet = (e) => setPlanetName(e.target.dataset.planet);
+  const changePlanet = (e) => setPlanetName(e.target.dataset.name);
 
   return (
     <MainContainer pageType="destination">
@@ -24,18 +29,14 @@ const Destination = () => {
           />
           <section className="flex flex-col items-center">
             <div className="mb-7 flex w-full items-center justify-center gap-4">
-              {planetList.map((planet) => (
-                <button
-                  key={planet.id}
+              {planetList.map(({ id, name }) => (
+                <Button
+                  key={id}
                   onClick={changePlanet}
-                  data-planet={planet.name}
-                  type="button"
-                  className={`link-hover relative h-full pb-2 font-barlow text-lg uppercase tracking-widest content-none ${
-                    planet.name === planetName ? 'link-active' : 'inactive'
-                  }`}
-                >
-                  {planet.name}
-                </button>
+                  dataName={name}
+                  pageClass={name === planetName ? 'link-active' : 'inactive'}
+                  btnContext={name}
+                />
               ))}
             </div>
             <div className="flex flex-col items-center justify-center gap-4">

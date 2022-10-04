@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
 import { useFetchInfo } from '../hook/useFetchInfo';
 import { MainContainer, PageContainer } from '../layouts';
-import { PageTitle, InfoTitle, Paragraph } from '../components/Titles';
-import ImageBox from '../components/ImageBox';
+import {
+  PageTitle,
+  InfoTitle,
+  Paragraph,
+  ImageBox,
+  Button,
+} from '../components';
 import { crewList } from '../listsHelper';
 
 const Crew = () => {
@@ -11,7 +16,7 @@ const Crew = () => {
 
   const formatName = (name) => name.split(' ').join('-');
 
-  const changeCrew = (e) => setCrewName(e.target.dataset.crew);
+  const changeCrew = (e) => setCrewName(e.target.dataset.name);
 
   return (
     <MainContainer pageType="crew">
@@ -26,18 +31,15 @@ const Crew = () => {
           />
           <section className="flex flex-col items-center gap-9 md:flex-col-reverse bpCustom:gap-32">
             <div className="flex w-full items-center justify-center gap-4 bpCustom:justify-start">
-              {crewList.map((crew) => (
-                <button
-                  key={crew.id}
+              {crewList.map(({ id, name }) => (
+                <Button
+                  key={id}
                   onClick={changeCrew}
-                  data-crew={crew.name}
-                  type="button"
-                  className={`relative h-2.5 w-2.5 rounded-full bg-white/25 text-transparent content-none before:absolute before:h-full before:w-full before:rounded-full ${
-                    crew.name === crewName ? 'crew-active' : ''
-                  }`}
-                >
-                  {crew.name}
-                </button>
+                  dataName={name}
+                  pageName="crew"
+                  pageClass={name === crewName ? 'crew-active' : ''}
+                  btnContext={name}
+                />
               ))}
             </div>
             <div className="flex flex-col items-center justify-center gap-4 bpCustom:items-start">
