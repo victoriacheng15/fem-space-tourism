@@ -1,11 +1,8 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-// components
-import ImageBox from '../ImageBox';
+import { ImageBox } from '..';
 import MobileNav from './MobileNav';
-// image
 import logo from '/assets/shared/logo.svg';
-// helper
 import { linkList } from '../../listsHelper';
 
 const Nav = () => {
