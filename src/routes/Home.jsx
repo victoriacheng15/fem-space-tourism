@@ -1,11 +1,11 @@
 import React from 'react';
-import { MainContainer, HomeContainer } from '../layouts';
+import { MainContainer, HomeContainer, ContentContainer } from '../layouts';
 import { Explore } from '../components';
 
 const Home = () => (
   <MainContainer>
     <HomeContainer>
-      <div className="flex flex-col items-center justify-center gap-4 bpCustom:items-start">
+      <ContentContainer>
         <h2 className="uppercase tracking-widest">so, you want to travel to</h2>
         <h1 className="font-bellefair text-8xl uppercase md:text-[9.38rem]">
           space
@@ -16,7 +16,7 @@ const Home = () => (
           back, and relax because we’ll give you a truly out of this world
           experience!
         </p>
-      </div>
+      </ContentContainer>
       <Explore />
     </HomeContainer>
   </MainContainer>

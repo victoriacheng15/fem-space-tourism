@@ -1,40 +1,46 @@
 import React, { useState } from 'react';
 import { useFetchInfo } from '../hook/useFetchInfo';
-import { MainContainer, PageContainer } from '../layouts';
+import {
+  MainContainer,
+  PageContainer,
+  ContentContainer,
+  SectionContainer,
+} from '../layouts';
 import {
   PageTitle,
   InfoTitle,
   Paragraph,
   ImageBox,
+  PageButton,
   TravelInfo,
-  Button,
 } from '../components';
-import { planetList } from '../listsHelper';
+import { planetList, DESTINATIONS } from '../config';
 
 const Destination = () => {
-  const { data } = useFetchInfo('destinations');
+  const { data } = useFetchInfo(DESTINATIONS);
   const [planetName, setPlanetName] = useState('moon');
 
   const changePlanet = (e) => setPlanetName(e.target.dataset.name);
 
   return (
-    <MainContainer pageType="destination">
+    <MainContainer compName={DESTINATIONS}>
       <PageContainer>
         <PageTitle span="01" title="pick your destination" />
-        <div className="flex flex-col items-center justify-center gap-10 bpCustom:flex-row bpCustom:gap-20">
+        <ContentContainer compName={DESTINATIONS}>
           <ImageBox
-            typeName="destination"
+            compName={DESTINATIONS}
             src={`./assets/destination/image-${planetName}.png`}
             alt={planetName}
           />
-          <section className="flex flex-col items-center">
+          <SectionContainer compName={DESTINATIONS}>
             <div className="mb-7 flex w-full items-center justify-center gap-4">
               {planetList.map(({ id, name }) => (
-                <Button
+                <PageButton
                   key={id}
                   onClick={changePlanet}
                   dataName={name}
-                  pageClass={name === planetName ? 'link-active' : 'inactive'}
+                  compName={DESTINATIONS}
+                  compClass={name === planetName ? 'link-active' : ''}
                   btnContext={name}
                 />
               ))}
@@ -68,8 +74,8 @@ const Destination = () => {
                 />
               </div>
             </div>
-          </section>
-        </div>
+          </SectionContainer>
+        </ContentContainer>
       </PageContainer>
     </MainContainer>
   );
