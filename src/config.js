@@ -44,3 +44,7 @@ export const techList = [
   { id: 2, name: 'spaceport' },
   { id: 3, name: 'space capsule' },
 ];
+
+export const DESTINATIONS = 'destinations';
+export const CREW = 'crew';
+export const TECH = 'technology';

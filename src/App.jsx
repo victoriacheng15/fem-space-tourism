@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Nav from './components/Navigation';
-import { Home, Destination, Crew, Technology } from './routes/';
+import { Home, Destination, Crew, Technology } from './routes';
 
 const App = () => (
   <>
