@@ -1,13 +1,11 @@
-import React, { useState } from 'react';
+import React, { useReducer } from 'react';
 import { Link } from 'react-router-dom';
 import hamburger from '/assets/shared/icon-hamburger.svg';
 import closeMenu from '/assets/shared/icon-close.svg';
-import { linkList } from '../../listsHelper';
+import { linkList } from '../../config';
 
 const MobileNav = () => {
-  const [showMenu, setShowMenu] = useState(false);
-
-  const toggleMenu = () => setShowMenu(!showMenu);
+  const [showMenu, setShowMenu] = useReducer((prevMode) => !prevMode, false);
 
   const generateLinks = linkList.map((link) => (
     <li key={link.id} className="text-2xl">
@@ -25,7 +23,7 @@ const MobileNav = () => {
   return (
     <div className="relative top-0 right-0 h-screen w-64 md:hidden">
       <button
-        onClick={toggleMenu}
+        onClick={setShowMenu}
         type="button"
         className="ease absolute right-8 top-8 z-10 pr-6 duration-300 md:hidden"
       >
