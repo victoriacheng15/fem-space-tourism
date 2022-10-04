@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
 import { useFetchInfo } from '../hook/useFetchInfo';
 import { MainContainer, PageContainer } from '../layouts';
-import { PageTitle, InfoTitle, Paragraph } from '../components/Titles';
-import ImageBox from '../components/ImageBox';
+import {
+  PageTitle,
+  InfoTitle,
+  Paragraph,
+  ImageBox,
+  Button,
+} from '../components';
 import { techList } from '../listsHelper';
 
 const Technology = () => {
@@ -11,7 +16,7 @@ const Technology = () => {
 
   const formatName = (name) => name.split(' ').join('-');
 
-  const changeTech = (e) => setTechName(e.target.dataset.tech);
+  const changeTech = (e) => setTechName(e.target.dataset.name);
 
   return (
     <MainContainer pageType="technology">
@@ -28,18 +33,15 @@ const Technology = () => {
           />
           <section className="flex w-7/12 flex-col items-center justify-center bpCustom:flex-row bpCustom:gap-10">
             <div className="mb-7 flex w-auto items-center justify-center gap-4 bpCustom:m-0 bpCustom:flex-col">
-              {techList.map((tech) => (
-                <button
-                  key={tech.id}
+              {techList.map(({ id, name }) => (
+                <Button
+                  key={id}
                   onClick={changeTech}
-                  data-tech={tech.name}
-                  type="button"
-                  className={`tech-btn h-10 w-10 text-2xl md:h-16 md:w-16 bpCustom:h-20 bpCustom:w-20 ${
-                    tech.name === techName ? 'tech-btn-active' : ''
-                  }`}
-                >
-                  {tech.id}
-                </button>
+                  dataName={name}
+                  pageName="technology"
+                  pageClass={name === techName ? 'tech-btn-active' : ''}
+                  btnContext={id}
+                />
               ))}
             </div>
             <div className="flex w-auto flex-col items-center justify-center gap-5 bpCustom:items-start">
