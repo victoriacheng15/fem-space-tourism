@@ -1,17 +1,22 @@
 import React, { useState } from 'react';
 import { useFetchInfo } from '../hook/useFetchInfo';
-import { MainContainer, PageContainer } from '../layouts';
+import {
+  MainContainer,
+  PageContainer,
+  ContentContainer,
+  SectionContainer,
+} from '../layouts';
 import {
   PageTitle,
   InfoTitle,
   Paragraph,
   ImageBox,
-  Button,
+  PageButton,
 } from '../components';
-import { techList } from '../listsHelper';
+import { techList, TECH } from '../config';
 
 const Technology = () => {
-  const { data } = useFetchInfo('technology');
+  const { data } = useFetchInfo(TECH);
   const [techName, setTechName] = useState('launch vehicle');
 
   const formatName = (name) => name.split(' ').join('-');
@@ -19,27 +24,27 @@ const Technology = () => {
   const changeTech = (e) => setTechName(e.target.dataset.name);
 
   return (
-    <MainContainer pageType="technology">
+    <MainContainer compName={TECH}>
       <PageContainer>
         <PageTitle span="03" title="space launch 01" />
-        <div className="bpCustom:gap-18 flex flex-col items-center justify-center gap-10 bpCustom:flex-row-reverse">
+        <ContentContainer compName={TECH}>
           <ImageBox
-            typeName="technology"
+            compName={TECH}
             src={`./assets/technology/image-${formatName(
               techName
             )}-portrait.jpg`}
             alt={techName}
             cover
           />
-          <section className="flex w-7/12 flex-col items-center justify-center bpCustom:flex-row bpCustom:gap-10">
+          <SectionContainer compName={TECH}>
             <div className="mb-7 flex w-auto items-center justify-center gap-4 bpCustom:m-0 bpCustom:flex-col">
               {techList.map(({ id, name }) => (
-                <Button
+                <PageButton
                   key={id}
                   onClick={changeTech}
                   dataName={name}
-                  pageName="technology"
-                  pageClass={name === techName ? 'tech-btn-active' : ''}
+                  compName={TECH}
+                  compClass={name === techName ? 'tech-btn-active' : ''}
                   btnContext={id}
                 />
               ))}
@@ -57,8 +62,8 @@ const Technology = () => {
                 )}
               />
             </div>
-          </section>
-        </div>
+          </SectionContainer>
+        </ContentContainer>
       </PageContainer>
     </MainContainer>
   );

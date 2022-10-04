@@ -1,17 +1,22 @@
 import React, { useState } from 'react';
 import { useFetchInfo } from '../hook/useFetchInfo';
-import { MainContainer, PageContainer } from '../layouts';
+import {
+  MainContainer,
+  PageContainer,
+  ContentContainer,
+  SectionContainer,
+} from '../layouts';
 import {
   PageTitle,
   InfoTitle,
   Paragraph,
   ImageBox,
-  Button,
+  PageButton,
 } from '../components';
-import { crewList } from '../listsHelper';
+import { crewList, CREW } from '../config';
 
 const Crew = () => {
-  const { data } = useFetchInfo('crew');
+  const { data } = useFetchInfo(CREW);
   const [crewName, setCrewName] = useState('douglas hurley');
 
   const formatName = (name) => name.split(' ').join('-');
@@ -19,25 +24,25 @@ const Crew = () => {
   const changeCrew = (e) => setCrewName(e.target.dataset.name);
 
   return (
-    <MainContainer pageType="crew">
+    <MainContainer compName={CREW}>
       <PageContainer>
         <PageTitle span="02" title="meet your crew" />
-        <div className="flex flex-col items-center justify-center gap-10 md:flex-col-reverse bpCustom:flex-row-reverse bpCustom:gap-32">
+        <ContentContainer compName={CREW}>
           <ImageBox
-            typeName="crew"
+            compName={CREW}
             src={`/assets/crew/image-${formatName(crewName)}.png`}
             alt={crewName}
             underline
           />
-          <section className="flex flex-col items-center gap-9 md:flex-col-reverse bpCustom:gap-32">
+          <SectionContainer compName={CREW}>
             <div className="flex w-full items-center justify-center gap-4 bpCustom:justify-start">
               {crewList.map(({ id, name }) => (
-                <Button
+                <PageButton
                   key={id}
                   onClick={changeCrew}
                   dataName={name}
-                  pageName="crew"
-                  pageClass={name === crewName ? 'crew-active' : ''}
+                  compName={CREW}
+                  compClass={name === crewName ? 'crew-active' : ''}
                   btnContext={name}
                 />
               ))}
@@ -55,8 +60,8 @@ const Crew = () => {
                 )}
               />
             </div>
-          </section>
-        </div>
+          </SectionContainer>
+        </ContentContainer>
       </PageContainer>
     </MainContainer>
   );

@@ -1,15 +1,8 @@
 import React from 'react';
 
-const Button = ({
-  key,
-  onClick,
-  pageName = 'destination',
-  pageClass,
-  dataName,
-  btnContext,
-}) => {
-  const typePage = {
-    destination:
+const PageButton = ({ onClick, compName, compClass, dataName, btnContext }) => {
+  const typeComp = {
+    destinations:
       'link-hover relative h-full pb-2 font-barlow text-lg uppercase tracking-widest content-none',
     crew: 'relative h-2.5 w-2.5 rounded-full bg-white/25 text-transparent content-none before:absolute before:h-full before:w-full before:rounded-full',
     technology:
@@ -17,15 +10,14 @@ const Button = ({
   };
   return (
     <button
-      key={key}
       onClick={onClick}
       data-name={dataName}
       type="button"
-      className={`${typePage[pageName]} ${pageClass}`}
+      className={`${typeComp[compName]} ${compClass}`}
     >
       {btnContext}
     </button>
   );
 };
 
-export default Button;
+export default PageButton;
