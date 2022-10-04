@@ -18,7 +18,7 @@ const Destination = () => {
         <PageTitle span="01" title="pick your destination" />
         <div className="flex flex-col items-center justify-center gap-10 bpCustom:flex-row bpCustom:gap-20">
           <ImageBox
-            classes="w-[10.63rem] md:w-[18.75rem] bpCustom:w-[27.81rem] aspect-square"
+            typeName="destination"
             src={`./assets/destination/image-${planetName}.png`}
             alt={planetName}
           />

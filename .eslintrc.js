@@ -3,11 +3,7 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: [
-    'airbnb',
-    'plugin:prettier/recommended',
-    'plugin:tailwindcss/recommended',
-  ],
+  extends: ['airbnb', 'plugin:prettier/recommended'],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -15,7 +11,7 @@ module.exports = {
     ecmaVersion: 13,
     sourceType: 'module',
   },
-  plugins: ['tailwindcss'],
+  plugins: ['prettier', 'tailwindcss'],
   rules: {
     'prettier/prettier': ['error', { singleQuote: true, parser: 'flow' }],
     'func-names': 0,

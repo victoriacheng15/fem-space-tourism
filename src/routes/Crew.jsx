@@ -19,7 +19,7 @@ const Crew = () => {
         <PageTitle span="02" title="meet your crew" />
         <div className="flex flex-col items-center justify-center gap-10 md:flex-col-reverse bpCustom:flex-row-reverse bpCustom:gap-32">
           <ImageBox
-            classes="w-[20.44rem] h-[14rem] md:w-[28.5rem] md:h-[35.75rem] bpCustom:w-[35.5rem] bpCustom:h-[44.5rem]"
+            typeName="crew"
             src={`/assets/crew/image-${formatName(crewName)}.png`}
             alt={crewName}
             underline
