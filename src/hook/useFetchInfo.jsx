@@ -16,6 +16,6 @@ export const useFetchInfo = (page) => {
     };
 
     fetchData();
-  }, []);
+  }, [page]);
   return { data, fetchError };
 };
