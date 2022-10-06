@@ -17,7 +17,7 @@ const ImageBox = ({ src, alt, cover, underline, compName = 'nav' }) => {
         src={src}
         alt={alt}
       />
-      {underline && <div className="h-0.5 w-full bg-white/25 md:hidden" />}
+      {underline && <div className="h-0.5 w-full bg-slate-100/25 md:hidden" />}
     </div>
   );
 };

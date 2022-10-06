@@ -10,7 +10,7 @@ const MobileLinks = () => {
           <Link
             id={link.id}
             to={link.href}
-            className="font-barlow uppercase tracking-wider text-white"
+            className="font-barlow uppercase tracking-wider text-slate-100"
           >
             <span className="mr-2">{link.span}</span>
             {link.name}
