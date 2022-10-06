@@ -4,23 +4,23 @@
 
 @layer components {
   .link-hover {
-    @apply before:absolute before:bottom-0 before:h-1 before:w-full hover:before:bg-white/25;
+    @apply before:absolute before:bottom-0 before:h-1 before:w-full hover:before:bg-slate-100/25;
   }
 
   .link-active {
-    @apply before:bg-white;
+    @apply before:bg-slate-100;
   }
 
   .crew-active {
-    @apply before:bg-white;
+    @apply before:bg-slate-100;
   }
 
   .tech-btn {
-    @apply rounded-full border-2 border-white/25 font-bellefair text-white;
+    @apply rounded-full border-2 border-slate-100/25 font-bellefair text-slate-100;
   }
 
   .tech-btn-active {
-    @apply bg-white text-black;
+    @apply bg-slate-100 text-black;
   }
 
   .main-bg {

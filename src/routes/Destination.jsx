@@ -54,7 +54,7 @@ const Destination = () => {
                     : ''
                 )}
               />
-              <div className="mb-8 h-0.5 w-full bg-white/50" />
+              <div className="mb-8 h-0.5 w-full bg-slate-100/50" />
               <div className="flex w-full flex-col items-center justify-center gap-10 md:flex-row">
                 <TravelInfo
                   title="avg. distance"

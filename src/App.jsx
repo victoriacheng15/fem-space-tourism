@@ -1,6 +1,6 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Nav from './components/Navigation';
+import { Nav, Footer } from './components';
 import { Home, Destination, Crew, Technology } from './routes';
 
 const App = () => (
@@ -12,6 +12,7 @@ const App = () => (
       <Route path="crew" element={<Crew />} />
       <Route path="technology" element={<Technology />} />
     </Routes>
+    <Footer />
   </>
 );
 

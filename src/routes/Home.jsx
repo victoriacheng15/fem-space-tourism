@@ -6,9 +6,14 @@ const Home = () => (
   <MainContainer>
     <HomeContainer>
       <ContentContainer>
-        <h2 className="uppercase tracking-widest">so, you want to travel to</h2>
-        <h1 className="font-bellefair text-8xl uppercase md:text-[9.38rem]">
-          space
+        <h1 className="text-center">
+          <span className="uppercase tracking-widest">
+            so, you want to travel to
+          </span>
+          <br />
+          <span className="font-bellefair text-8xl uppercase md:text-[9.38rem]">
+            space
+          </span>
         </h1>
         <p className="max-w-md text-center leading-8 bpCustom:text-left">
           Let’s face it; if you want to go to space, you might as well genuinely
