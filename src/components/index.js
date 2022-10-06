@@ -6,3 +6,4 @@ export { default as ImageBox } from './ImageBox';
 export { default as Nav } from './Navigation';
 export { default as TravelInfo } from './TravelInfo';
 export { default as Explore } from './TravelInfo/Explore';
+export { default as Footer } from './Footer';
